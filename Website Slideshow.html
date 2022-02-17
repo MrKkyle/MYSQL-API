@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name = "viewport" content = "width = device-width, initial-scale = 1">
+<title>Enjoy a Slideshow!</title>
+<style>
+body
+{
+	font-family: Arial;
+	margin: 0px;
+}
+
+*
+{
+	box-sizing: border-box;
+}
+
+img
+{
+	vertical-align: middle;
+	width: 1880px;
+	height: 977px;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: relative;
+}
+
+.omega-container
+{
+	margin: 0px;
+	height: 100%;
+	position: absolute;
+	width: 100%;
+}
+	
+.text
+{
+	font-size: 18px;
+	color: black;
+	position: absolute;
+	padding: 8px 12px;
+	width: 100%;
+	text-align: center;
+	bottom: 8px;
+}
+
+.container
+{
+	width: 850px;
+	height: 100px;
+	position: absolute;
+	margin: 2px;	
+	color: white;
+	top: 0;
+	right: 0;
+	background-color: black;
+	display: none;
+	padding: 8px 12px;
+	opacity: 0.8;
+}
+
+.container:hover
+{
+	opacity: 1;
+}
+
+.container-text
+{
+	font-size: 14px;
+	font-family: Calibri;
+	text-align: center;
+	display: none;
+	
+}
+
+.mySlides
+{
+	display: none;
+	margin: 0;
+}
+
+/* Slideshow container */
+.slideshow-container
+{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	margin: 0px;
+}
+
+.text-slideshow-container
+{
+	font-size: 18px;
+	color: white;
+	position: absolute;
+	padding: 8px 12px;
+	width: 100%;
+	text-align: center;
+	bottom: 15px;
+	margin: 0;
+}
+
+.text-page
+{
+	font-size: 18px;
+	color: black;
+	position: relative;
+	padding: 8px 12px;
+	width: 100%;
+	text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext
+{
+	color: white;
+	font-size: 12px;
+	padding: 8px 12px;
+	position: absolute;
+	top: 0;
+}
+
+
+.active
+{
+	background-color: #717171;
+}
+
+/* Fading animation */ 
+.fade
+{
+	-webkit-animation-name:fade;
+	-webkit-animation-duration: 1.5s;
+	animation-name: fade;
+	animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade
+{
+	from {opacity: 0.4}
+	to {opacity: 1}
+}
+
+@keyframes fade
+{
+	from {opacity : 0.4}
+	to {opacity: 1}
+}
+@keyframes fade
+{
+	from {opacity: 0.4}
+	to {opacity: 1}
+}
+
+/* On smaller screen, decrease text size */ 
+@media only screen and (max-width: 300px) 
+{
+	.prev, .next,.text 
+	{
+		font-size: 11px
+	}
+}
+
+.button
+{
+	border: none;
+	color: white;
+	padding: 14px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 15px;
+	margin: 0;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+}
+
+.button1
+{
+	background-color: white;
+	color: black;
+	border: 2px solid #4CAF50;
+}
+
+.button1:hover
+{
+	opacity: 1;
+	color: white;
+	background-color: #4CAF50;
+}
+
+.button2
+{
+	background-color: white;
+	color: black;
+	border: 2px solid #008CBA;
+}
+
+.button2:hover
+{
+	color: white;
+	background-color: #008CBA;
+}
+
+.button3
+{
+	background-color: white;
+	color: black;
+	border: 2px solid #000000;
+}
+
+.button3:hover
+{
+	color: white;
+	background-color: #000000;
+}
+
+/* Next & previous buttons */
+.prev, .next 
+{
+	cursor: pointer;
+	position: absolute;
+	top: 50%;
+	width: auto;
+	padding: 16px;
+	margin-top: -22px;
+	color: white;
+	font-weight: bold;
+	font-size: 18px;
+	transition: 0.6s ease;
+	border-radius: 0 3px 3px 0;
+	user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next
+{
+	right: 0;
+	border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover
+{
+	background-color: rgba(0, 0, 0, 0.8);
+}
+
+</style>
+</head>
+
+<body>
+	<script src ="Website Slideshow.js"></script>	
+		<div class = "slideshow-container">
+
+			<div class = "mySlides fade">
+				<div class = "numbertext">1 / 3</div>
+				<img src = "jase-bloor-oCZHIa1D4EU-unsplash.jpg"></img>
+				<div id = "c01" class = "container">
+					<div id = "id00" class = "container-text">
+						<p>	This famous Alley, also known as <b>"shotengai"</b>, is one of the 
+							many found in Tokyo.These alleys are typically in the form of a 
+							local market street that is closed to car traffic. Local shotengai 
+							cater to the needs of nearby residents with a diverse mix of small 
+							specialty shops and few large retailers. In many older neighborhoods, 
+							these streets serve as cultural gathering spaces, holding seasonal 
+							festivals, processions, and other events throughout the year.
+						</p>
+					</div>
+				</div>
+				
+				<button id = "bt01" class = "button button3"
+				onclick = "document.getElementById('id00').style.display = 'none'"
+				>Information</button>
+				
+			</div>
+			<div class = "mySlides fade">
+				<div class = "numbertext">2 / 3</div>
+				<img src = "793982.jpg"></img>
+				<div id = "c02" class = "container">
+					<div id = "id01" class = "container-text">
+						<p>	Chiba is the capital and largest city of Chiba Prefecture,
+							with other major cities including Funabashi, Matsudo, Ichikawa 
+							and Kashiwa. Chiba Prefecture is located on Japan's eastern 
+							Pacific coast to the east of Tokyo, and is part of the Greater 
+							Tokyo Area, the most populous metropolitan area in the world. 
+							Chiba Prefecture largely consists of the Boso Peninsula, which 
+							encloses the eastern side of Tokyo Bay and separates it from Kanagawa Prefecture.
+						</p>
+					</div>
+				</div>
+				<button id = "bt02" class = "button button2"
+				onclick = "document.getElementById('id01').style.display = 'none'"
+				>Information</button>
+				
+			</div>
+			
+			<div class = "mySlides fade">
+				<div class = "numbertext"> 3 / 3</div>
+				<img src = "eric-lee-W41DxGHdztQ-unsplash.jpg"></img>
+				<div id = "c03" class = "container">
+					<div id = "id02" class = "container-text">
+						<p>	There is more to Japan than just the cities. Although a hard majority 
+							of the country lives in urban areas <b>and over 30% of those people are in 
+							Tokyo alone!</b>, a lot of those urban areas end up being small cities in the 
+							countryside. These are cities of 100,000 to 200,000 people, dense at the 
+							core but only several kilometers from rice farms and forested mountains. 
+							Going further out from them, you will find small towns and hamlets.
+						</p>
+					</div>
+				</div>
+				
+				<button id = "bt03" class = "button button1"
+				onclick = "document.getElementById('id02').style.display = 'none'"
+				>Information</button>
+			</div>
+			
+			<a class = "prev" onclick = "plusSlides(-1)">&#10094;</a>
+			<a class = "next" onclick = "plusSlides(1)">&#10095;</a>
+			
+		</div>
+		<br>
+		
+		<div style = "text-align: center">
+			<span class = "dot" onclick = "currentSlide(1)"></span>
+			<span class = "dot" onclick = "currentSlide(2)"></span>
+			<span class = "dot" onclick = "currentSlide(3)"></span>
+		</div>
+		
+		<script src = "Script1.js"></script>
+		<script src = "Script2.js"></script>
+		<script src = "Script5.js"></script>
+</body>
+</html>

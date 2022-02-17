@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta name = "viewpoint" content = "width = device width, initial scale = 1">'
+	<title>Enjoy a Video</title>
+		<style>
+		body
+		{
+			height: 100%;
+			font-family: Arial;
+			margin: 0px;
+		}
+
+		*
+		{
+			box-sizing: border-box;
+		}
+		
+		/* The image used */
+		.bg-img
+		{
+
+			background-image: url("sam-lee-PBtRaGdD1IM-unsplash.jpg");
+			min-height: 480px;
+			height: 977px;
+	
+			/* Center and scale the image nicely */
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: cover;
+			background-color: #cccccc;
+			position: relative;
+			margin: 0px;
+		}
+		
+		/* The video container */ 
+		.vid-container
+		{
+			position: absolute;
+			top: 62%;
+			right: 40px;
+			margin: 0px;
+			padding: 8px 14px;
+			width: 400px;
+			background-color: url("sam-lee-PBtRaGdD1IM-unsplash.jpg");
+		}
+		
+		</style>
+	</head>
+	<body>
+		<script src ="My Website Videos.js"></script>
+		<div class = "bg-img">
+			<div class = "vid-container">
+				<iframe width = "420" height = "345" src = "https://youtu.be/7nLCC_LtFOs">
+				</iframe>
+			</div>	
+		</div>
+	</body>
+</html>

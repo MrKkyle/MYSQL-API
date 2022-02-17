@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+</style>
+</head>
+<body>
+
+
+
+<p> And if u go chansing<span class = "animal"><rabbits></span></p>
+<p>And you know you're gonna fall</p>
+<p>Tell em a <span class = "character">hookah smoking<span class = "animal"catepillar
+</span></span></p>
+<p>has given you the call
+<script>
+function count(selector)
+{
+	return document.querySelectorAll(selector).length
+}
+
+console.log(count("p")); // All <p> elements
+console.log(count(".animal")); // Class animal
+console.log(count("p .animal")); // Animal inside of <p>
+console.log(count("p > .animal")); // Direct child of <p>
+
+
+</script>
+
+
+
+<p style = "text-align: center">
+	<img src = "WhatsApp Image 2020-08-28 at 13.18.58.png" style = "position: relative">
+</p>
+<script>
+	let cat = document.querySelector("img");
+	let angle = Math.PI / 2;
+		function animate(time, lastTime)
+		{
+			if(lastTime != null)
+			{
+				angle += (time - lastTime) * 0.001;
+			}
+			cat.style.top = (Math.sin(angle) * 20) + "px";
+			cat.style.left = (Math.cos(angle) * 20) + "px";
+			requestAnimationFrame(newTime => animate(newTime, time));
+		}
+		requestAnimationFrame(animate);
+</script>
+
+
+
+<button>Click me any way you want</button>
+<script>
+	let button = document.querySelector("button");
+	button.addEventListener("mousedown", event =>
+	{
+		if(event.button == 0)
+		{
+			console.log("Left Button");
+		}
+		else if(event.button == 1)
+		{
+			console.log("Middle Button");
+		}
+		else if(event.button == 2)
+		{
+			console.log("Right Button");
+		}
+	});
+
+</script>
+
+<form method = "GET" action = "example/message.html">
+	<p>Name:<br><input type = "text" name = "name"></p>
+	<p>Message:<br><textarea name = "message"></textarea></p>
+	<p><button type = "submit">Send</button></p>
+</form>
+
+<script src = "Tester.js"></script>
+<script src = "forms.js"></script>
+</body>
+</html>
