@@ -1,0 +1,490 @@
+body
+{
+    margin: 0px;
+    overflow: hidden;
+    font-family: Arial;
+}
+.text 
+{
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+    padding: 6px;    
+    text-align: center;
+}
+.text-modal
+{
+    text-align: center;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(252, 250, 250);
+    padding: 6px;
+}
+.text-in
+{
+    text-align: center;
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+	color:rgba(255, 255, 255, 0.8);
+    padding: 6px;   
+}
+/* width */
+::-webkit-scrollbar 
+{
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track 
+{
+    background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb 
+{
+    background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover 
+{
+    background: #555;
+}
+.background-image 
+{
+    background-image: url("Images\\915130.png");
+    min-height: 480px;
+    height: 977px;
+    width: 1880px;
+    min-width: 640px;
+
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+    position: relative;
+    margin: 0;
+}
+.modal1
+{
+	display: block;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgb(0,0,0);
+	background-color: rgba(0,0,0,0.4);
+	padding-top: 60px;
+}
+.modal2
+{
+	display: block;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgb(0,0,0);
+	background-color: rgba(0,0,0,0.15);
+	padding-top: 60px;
+}
+.modal-content
+{  
+    text-align: center;
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+	background-color: #fefefe;
+    position: relative;
+	border: 1px solid #888;
+	width: 450px;
+    height: 430px;
+	padding: 10px;
+	opacity: 0.75;
+    border-radius: 10px;
+	margin: 5% auto 15% auto;	/* 5% from the top, 15% from the bottom and centered */
+}
+.modal-content:hover
+{
+	opacity: 0.95;
+}
+.addInfo
+{
+    display: none;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 33%;
+    height: 650px;
+    width: 600px;
+    padding: 20px;
+    opacity: 0.9;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    margin: 2% auto 15% auto;
+    padding: 10px;
+}
+.deleteInfo
+{
+    display: none;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 33%;
+    height: 650px;
+    width: 600px;
+    padding: 20px;
+    opacity: 0.9;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    margin: 2% auto 15% auto;
+    padding: 10px;
+}
+.createInfo
+{
+    display: none;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 33%;
+    height: 650px;
+    width: 600px;
+    padding: 20px;
+    opacity: 0.9;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    margin: 2% auto 15% auto;
+    padding: 10px;
+}
+.updateInfo
+{
+    display: none;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 33%;
+    height: 650px;
+    width: 600px;
+    padding: 20px;
+    opacity: 0.9;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    margin: 2% auto 15% auto;
+    padding: 10px;
+}
+.deleteTable
+{
+    display: none;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 33%;
+    height: 650px;
+    width: 600px;
+    padding: 20px;
+    opacity: 0.9;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    margin: 2% auto 15% auto;
+    padding: 10px;
+}
+.m2 
+{
+    height: 200px;
+    background-color: #fefefe;
+}
+
+.imgcontainer
+{
+	background-color: url("Images\\594713.jpg");
+	margin: 24px 0 12px 0;
+	position: relative;
+	left: 50%;
+}
+img.avatar
+{
+	position: relative;
+	text-align: center;
+	width: 55%;
+	border-radius: 60%;
+}
+.modal-container
+{
+	padding: 16px;
+}
+.button4
+{
+	text-align: center;
+	text-decoration: none;
+	font-size: 12px;
+	cursor: pointer;
+	width: 90px;
+	height: 40px;
+	position: relative;
+    background-position: left;
+    background-size: cover;
+	margin: 10px;
+	color: black;
+    background-color: white;
+	border: 1px solid #000000;
+    border-radius: 10px;
+    transition-duration: 1s;
+    animation: fadeIn 1s ease-in forwards; 
+
+}
+.button4:hover
+{
+	color: white;
+    border: 1px solid white;
+    background-position: center;
+    background-color: black;
+    color: white;
+}
+.button5
+{
+	text-align: center;
+	text-decoration: none;
+	font-size: 12px;
+	cursor: pointer;
+	width: 300px;
+	height: 45px;
+	position: relative;
+    left: 80px;
+    background-position: left;
+    background-size: cover;
+    background-image: url("");
+	margin: 10px;
+	color: rgb(0, 0, 0);
+    background-color:aliceblue;
+	border: 1px solid #000000;
+    border-radius: 10px;
+    transition-duration: 1s;
+    animation: fadeIn 1s ease-in forwards; 
+
+}
+.button5:hover
+{
+	color: white;
+    border: 1px solid white;
+    background-position: center;
+    background-color: black;
+    color: white;
+}
+
+.line
+{
+	display: block;
+	background-color: rgb(211, 211, 211);
+	border-radius: 5px;
+	height: 2px;
+	width: 400px;
+	left: 10%;
+	position: absolute;
+}
+.information
+{
+    padding: 10px;
+    display: block;
+    font-size: 15px;
+    height: 20px;
+    width: 250px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    position: fixed;
+    left: 10px;
+    top: 15px;
+    border-radius: 10px;
+    z-index: 10;
+}
+
+.information2
+{
+    padding: 10px;
+    display: block;
+    font-size: 14px;
+    height: 52px;
+    width: 250px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    position: fixed;
+    left: 10px;
+    top: 60px;
+    border-radius: 10px;
+    z-index: 10;
+    font-family: Arial;
+    
+}
+
+@keyframes fadeIn
+{
+    from
+    {
+        opacity: 0;
+    }
+	to
+	{
+		opacity: 1;
+	}
+}
+@keyframes fadeOut
+{
+	to
+	{
+		opacity: 0;
+	}
+}
+.no-outline:focus 
+{
+    outline: none;
+}
+input[type = text]
+{
+	width: 40%;
+	padding: 8px;
+	border: 1px solid aliceblue;
+    left: 174px;
+    position: relative;
+    background: transparent;
+    color: white;
+    border-radius: 5px;
+    border-top-style: groove;
+    border-right-style: groove;
+    border-left-style: groove;
+    border-bottom-style: groove;
+}
+input[type = text2]
+{
+	width: 40%;
+	padding: 5px;
+	margin: 2px 0; 
+	border: 1px solid #ccc;
+	display: inline-block;
+	box-sizing: border-box;
+    border-radius: 10px;
+    border-top-style: groove;
+    border-right-style: groove;
+    border-left-style: groove;
+    border-bottom-style: groove;
+    position: absolute;
+    left: 93px;
+} 
+input[type = var]
+{
+	width: 15%;
+	padding: 5px;
+	margin: 2px 0; 
+	border: 1px solid #ccc;
+	display: inline-block;
+	box-sizing: border-box;
+    border-radius: 10px;
+    position: relative;
+    left: 343px;
+} 
+
+input[type = submit]
+{
+    text-align: center;
+    font-family: Arial;
+}
+.editdb
+{
+	display: block;
+	position: absolute;
+	color:rgba(255, 255, 255, 0.8);
+    background-color: rgba(0, 0, 0, 0.5);
+	border: 1px solid black;
+	top: 130px;
+	left: 645px;
+	width: 500px;
+	height: 550px;
+    z-index: 2;
+    text-align: left;
+    padding: 10px;
+    border-radius: 10px;
+    transition-duration: 1s;
+    opacity: 1;    
+}
+.close
+{
+	position: absolute;
+	left: 5px;
+	top: 5px;
+	color: #ff0000;
+	font-size: 50px;
+	font-weight: bold;
+    text-align: center;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url("Images\\return.png");
+    height: 30px;
+    width: 30px;
+}
+.close:hover,
+.close:focus
+{
+	color: rgb(255, 0, 0);
+	cursor: pointer;
+}
+.m
+{
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url("Images\\remove2.png");
+    height: 30px;
+    width: 30px;
+    position: absolute;
+    left: 215px;
+    top: 6px;
+}
+.tooltip 
+{
+    position: absolute;
+    display: inline-block;
+    border-bottom: 1px dotted rgb(197, 197, 197);
+    left: 225px;
+    top: 240px;
+    color: white;
+}
+.tooltip .tooltiptext 
+{
+    visibility: hidden;
+    width: 300px;
+    height: 290px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: rgba(255, 255, 255, 0.8);
+    text-align: left;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 51px;
+    left: 310%;
+    top:10%;
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+.tooltip .tooltiptext::after 
+{
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext 
+{
+    visibility: visible;
+    opacity: 1;
+}
