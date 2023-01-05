@@ -30,13 +30,13 @@ $query = mysqli_query($conn, "SELECT * FROM `api-credentials` WHERE userName = '
 
 if(mysqli_num_rows($query) > 0)
 {
-    header("location: Api-main.php");
+    header("location: Main/Api-main.php");
     $_SESSION["isActive"] = "true";
     $_SESSION["latestLogin"] = date("Y/m/d") . " " . date("h:i:sa");
 }
 else
 {
-    header("location: Error-page.php");
+    header("location: Errors/Error-page.php");
 }
 ?>
 </head>
