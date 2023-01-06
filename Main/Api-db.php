@@ -30,6 +30,35 @@ for($i = 1; $i <= 4; $i++)
         }
     }
 }
+
+if(isset($_POST["c2type"]) == FALSE)
+{
+    $_SESSION["c2type"] = "";
+}
+else
+{
+    $c2type = $_POST["c2type"];
+}
+
+if(isset($_POST["c3type"]) == FALSE)
+{
+    $_SESSION["c3type"] = "";
+}
+else
+{
+    $c3type = $_POST["c3type"];
+}
+
+if(isset($_POST["c4type"]) == FALSE)
+{
+    $_SESSION["c4type"] = "";
+}
+else
+{
+    $c4type = $_POST["c2type"];
+}
+
+
 ?>
 
                                 <!--Creates database from user's input -->
@@ -84,8 +113,9 @@ else                                    //if database name doesnt exist
             <button class = 'button3' onclick = 'window.location.href = `Api-main.php`;'>Proceed</button>
         ";   
     }
-
 }
+
+
 
 ?>
 

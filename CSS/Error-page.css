@@ -49,6 +49,8 @@ body
     height: 430px;
 	padding: 10px;
 	opacity: 0.75;
+	left: 50%;
+    transform: translate(-50%, 0%); 
 }
 
 /* Change styles for span and cancel button on extra small screens */

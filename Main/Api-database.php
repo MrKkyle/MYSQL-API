@@ -88,13 +88,13 @@ if($_SESSION["_dbname"] == "")
         <div class = "text-in">Edit Database and tables</div>
         <div class = "line"></div>
         <br>
-        <button class = "button5" type = "button" onclick = "window.location.href = 'Api-table.php';">View Table Information<i class = "m" style = "background-image: url('Images\\view.png');"></i></button><br>
-        <button class = "button5" type = "button" id = "btn1">Add Table Information<i class = "m" style = "background-image: url('Images\\new.png');"></i></button><br>
-        <button class = "button5" type = "button" id = "btn2">Update Table Information<i class = "m" style = "background-image: url('Images\\update.png');"></i></button><br>
-        <button class = "button5" type = "button" id = "btn3">Create New Table<i class = "m" style = "background-image: url('Images\\new.png');"></i></button><br> 
-        <button class = "button5" type = "button" id = "btn4">Delete Table Information<i class = "m" style = "background-image: url('Images\\remove.png');"></i></button><br>
-        <button class = "button5" type = "button" id = "btn5">Delete A Table<i class = "m" style = "background-image: url('Images\\remove2.png');"></i></button><br>
-        <button class = "button5" type = "button" id = "btn5" onclick = "window.location.href = 'Api-main.php';">Return to home<i class = "m" style = "background-image:url('Images\\home.png');"></i></button><br>
+        <button class = "button5" type = "button" onclick = "window.location.href = 'Api-table.php';">View Table Information<i class = "m" style = "background-image: url('../Images/view.png');"></i></button><br>
+        <button class = "button5" type = "button" id = "btn1">Add Table Information<i class = "m" style = "background-image: url('../Images/new.png');"></i></button><br>
+        <button class = "button5" type = "button" id = "btn2">Update Table Information<i class = "m" style = "background-image: url('../Images/update.png');"></i></button><br>
+        <button class = "button5" type = "button" id = "btn3">Create New Table<i class = "m" style = "background-image: url('../Images/new.png');"></i></button><br> 
+        <button class = "button5" type = "button" id = "btn4">Delete Table Information<i class = "m" style = "background-image: url('../Images/remove.png');"></i></button><br>
+        <button class = "button5" type = "button" id = "btn5">Delete A Table<i class = "m" style = "background-image: url('../Images/remove2.png');"></i></button><br>
+        <button class = "button5" type = "button" id = "btn5" onclick = "window.location.href = 'Api-main.php';">Return to home<i class = "m" style = "background-image:url('../Images/home.png');"></i></button><br>
     </div>
 
     <!-- Add info to database -->
@@ -178,16 +178,32 @@ if($_SESSION["_dbname"] == "")
                 <br>
                 <br>                    
                 <div class = "text" style = "color: white;">Column 1:</div>
-                <input type = "text2" placeholder = "Name" name = "column1" autocomplete = "off"><input type = "var" placeholder = "type" name = "c1type" autocomplete = "off">
+                <input type = "text2" placeholder = "Name" name = "column1" autocomplete = "off" required><select style = "width: 80px; left:365px; top:2px;"name = "c1type">
+                                                                                                    <option value = "none" selected disabled>Type</option>
+                                                                                                    <option>varchar(255)</option>
+                                                                                                    <option>int(15)</option>
+                                                                                                  </select>
                 <br>
                 <div class = "text" style = "color: white;">Column 2:</div>
-                <input type = "text2" placeholder = "Name" name = "column2" autocomplete = "off"><input type = "var" placeholder = "type" name = "c2type" autocomplete = "off">
+                <input type = "text2" placeholder = "Name" name = "column2" autocomplete = "off"><select style = "width: 80px; left:365px; top:2px;"name = "c2type">
+                                                                                                    <option value = "none" selected disabled>Type</option>
+                                                                                                    <option>varchar(255)</option>
+                                                                                                    <option>int(15)</option>
+                                                                                                  </select>
                 <br>
                 <div class = "text" style = "color: white;">Column 3:</div>
-                <input type = "text2" placeholder = "Name" name = "column3" autocomplete = "off"><input type = "var" placeholder = "type" name = "c3type" autocomplete = "off">
+                <input type = "text2" placeholder = "Name" name = "column3" autocomplete = "off"><select style = "width: 80px; left:365px; top:2px;"name = "c3type">
+                                                                                                    <option value = "none" selected disabled>Type</option>
+                                                                                                    <option>varchar(255)</option>
+                                                                                                    <option>int(15)</option>
+                                                                                                  </select>
                 <br>
                 <div class = "text" style = "color: white;">Column 4:</div>
-                <input type = "text2" placeholder = "Name" name = "column4" autocomplete = "off"><input type = "var" placeholder = "type" name = "c4type" autocomplete = "off">
+                <input type = "text2" placeholder = "Name" name = "column4" autocomplete = "off"><select style = "width: 80px; left:365px; top:2px;"name = "c4type">
+                                                                                                    <option value = "none" selected disabled>Type</option>
+                                                                                                    <option>varchar(255)</option>
+                                                                                                    <option>int(15)</option>
+                                                                                                  </select>
                 <br>
                 
                 <button class = "button4" type = "submit" style = "left: 40%;" name = "tbBtn">Confirm</button>

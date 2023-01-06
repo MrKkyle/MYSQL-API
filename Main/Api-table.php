@@ -41,7 +41,7 @@ while($set = mysqli_fetch_row($db))
     <div class = "background-image">
         <div class = "modal1"></div>
     </div>
-    <button class = "button4" type = "button" onclick = "window.location.href = 'Api-Database.php';">Edit</div>
+    <button class = "button4" type = "button" onclick = "window.location.href = 'Api-Database.php';">Edit</button>
     <div class = "table-info">
     
     <?php 

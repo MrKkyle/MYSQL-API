@@ -48,25 +48,7 @@ body
 	background-color: rgba(0,0,0,0.4);
 	padding-top: 60px;
 }
-.modal-content
-{  
-    text-align: center;
-    font-size: 15px;
-    font-family: Arial, Helvetica, sans-serif;
-	background-color: #fefefe;
-    position: relative;
-	border: 1px solid #888;
-	width: 450px;
-    height: 430px;
-	padding: 10px;
-	opacity: 0.75;
-    border-radius: 10px;
-	margin: 5% auto 15% auto;	/* 5% from the top, 15% from the bottom and centered */
-}
-.modal-content:hover
-{
-	opacity: 0.95;
-}
+
 .button4
 {
 	text-align: center;
@@ -84,6 +66,8 @@ body
     border-radius: 10px;
     transition-duration: 0.5s;
 	z-index: 2;
+	left: 50%;
+    transform: translate(-50%, 0%); 
 }
 .button4:hover
 {
@@ -125,6 +109,8 @@ body
 	font-family: Arial;
 	font-size: 14px;
 	margin: 0% auto 15% auto;
+	left: 50%;
+    transform: translate(-50%, 0%); 
 }
 /* width */
 ::-webkit-scrollbar 

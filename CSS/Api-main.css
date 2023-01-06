@@ -125,7 +125,7 @@ body
 	padding: 10px;
 	opacity: 0.75;
     border-radius: 10px;
-	margin: 5% auto 15% auto;	/* 5% from the top, 15% from the bottom and centered */
+	margin: 5% auto 15% auto;	
 }
 .modal-content:hover
 {
@@ -473,6 +473,7 @@ input[type = submit]
     padding: 10px;
     font-size: 14px;
     font-family: Arial;
+    
 }
 .main:hover
 {
@@ -480,32 +481,40 @@ input[type = submit]
 }
 .create-database
 {
-    left: 600px;
+
     top: 200px;
     background-image: url("../Images/");
+    left: 50%;
+    transform: translate(-90%, 0%); 
     
 }
 .login-database
 {
-    left: 930px;
+
     top: 200px;
     background-image: url("../Images/");
+    left: 50%;
+    transform: translate(13%, 0%); 
 }
 
 .about
 {
-    left: 600px;
+
     top: 430px;
     background-image: url("../Images/");
+    left: 50%;
+    transform: translate(13%, 0%); 
 }
 
 .logout
 {
-    left: 930px;
+
     top: 430px;
     background-image: url("../Images/");
     width: 322px;
     height: 221px;
+    left: 50%;
+    transform: translate(-90%, 0%); 
 
 }
 .tooltip 

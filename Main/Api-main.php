@@ -193,7 +193,7 @@ if(isset($_SESSION["isActive"]) == false)
     <!-- Main Api-containers --> 
     <div class = "main create-database" id = "m1"><br><br><br><br><br>Create a Database</div>
     <div class = "main login-database" id = "m2"><br><br><br><br><br>Connect to Database</div>
-    <div class = "main about" id = "m3"><br><br><br><br><br>About</div>
+    <div class = "main about" id = "m3"><br><br><br><br><br>About this API</div>
 
     <!-- Return Button -->
     <button class = "return-button" id = "rtnbtn01">Return</button>

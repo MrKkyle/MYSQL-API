@@ -1,7 +1,7 @@
 <?php session_start();?>
 
 <head>
-<link rel = "stylesheet" type = "text/css" href = "../CSS/Api-main.css" ></link> 	
+<link rel = "stylesheet" type = "text/css" href = "../CSS/Api-main.css"></link> 	
 </head>
 
 <?php

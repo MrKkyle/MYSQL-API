@@ -51,7 +51,9 @@ if($column4 != "")
 $result .= $column0 . $c1 . $c2 . $c3 . $c4;
 $result = rtrim($result, ", ");
 
+
 $query = "CREATE TABLE $tableName ($result)";
+
 if(mysqli_query($conn, $query))
 {
     echo"

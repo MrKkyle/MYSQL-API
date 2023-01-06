@@ -167,6 +167,46 @@ function newTable()
     $c4 = "";
     $result = "";
     $column0 = "id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,";
+    for($i = 1; $i <= 4; $i++)//Checks the format of the table
+    {
+        if($_POST["column" . $i] != "")                 //if the column has a name
+        {
+            if(isset($_POST["c" . $i . "type"]) == TRUE)//if it has a type
+            {
+                continue;
+            }
+            else                                        //it doesnt have a type
+            {
+                header("location: ../Errors/Error-tbf.php");
+            }
+        }
+    }
+    if(isset($_POST["c2type"]) == FALSE)
+    {
+        $_SESSION["c2type"] = "";
+    }
+    else
+    {
+        $c2type = $_POST["c2type"];
+    }
+
+    if(isset($_POST["c3type"]) == FALSE)
+    {
+        $_SESSION["c3type"] = "";
+    }
+    else
+    {
+        $c3type = $_POST["c3type"];
+    }
+
+    if(isset($_POST["c4type"]) == FALSE)
+    {
+        $_SESSION["c4type"] = "";
+    }
+    else
+    {
+        $c4type = $_POST["c2type"];
+    }
 
     $conn = mysqli_connect($servername, $username, $password, $database);
     if($conn->connect_error)
@@ -195,8 +235,6 @@ function newTable()
 
     
     $query = "CREATE TABLE $tablename ($result)";
-    
-    print_r($query);
     echo"<br>";
     
     if(mysqli_query($conn, $query))
