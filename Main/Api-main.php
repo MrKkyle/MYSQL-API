@@ -49,7 +49,8 @@ if(isset($_SESSION["isActive"]) == false)
     --->
     
     <div class = "information-databases" id = "info2">
-        List of Databases Available:<br>
+        <b>List of Databases Available:</b><br>
+        <hr>
         <?php 
             $conn = mysqli_connect("localhost", "root", "");
             //Check connection
@@ -63,8 +64,19 @@ if(isset($_SESSION["isActive"]) == false)
             while($set = mysqli_fetch_row($db))
             {
                 $dbs[] = $set[0];
+                
             }    
+            /* Removes the default values from the array */
+            unset($dbs[0]);
+            unset($dbs[4]);
+            unset($dbs[7]);
+            unset($dbs[8]);
+            unset($dbs[9]);
             echo implode('<br/>', $dbs);
+            
+            
+
+             
         ?>
     </div>
 

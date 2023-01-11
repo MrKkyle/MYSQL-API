@@ -2,6 +2,7 @@ body
 {
     margin: 0px;
     overflow: hidden;
+    font-family: Arial;
 }
 .text 
 {
@@ -168,7 +169,7 @@ img.avatar
 {
     padding: 10px;
     display: block;
-    font-size: 15px;
+    font-size: 13px;
     height: 100px;
     width: 250px;
     background-color: rgba(0, 0, 0, 0.8);
@@ -178,12 +179,13 @@ img.avatar
     bottom: 190px;
     border-radius: 10px;
     z-index: 10;
+
 }
 .information2
 {
     padding: 10px;
     display: block;
-    font-size: 15px;
+    font-size: 13px;
     height: 52px;
     width: 250px;
     background-color: rgba(0, 0, 0, 0.8);
@@ -193,12 +195,18 @@ img.avatar
     top: 82px;
     border-radius: 10px;
     z-index: 10;
+    /*
+    border-style: inset;
+    border-width: 1px;
+    */
+    
 }
 .information-databases
 {
     padding: 10px;
     display: block;
-    font-size: 15px;
+    
+    font-size: 13px;
     height: 150px;
     width: 250px;
     background-color: rgba(0, 0, 0, 0.8);
@@ -209,6 +217,7 @@ img.avatar
     border-radius: 10px;
     overflow: auto;
     z-index: 10;
+    text-align: center;
 }
 .button3 
 {

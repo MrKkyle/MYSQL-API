@@ -24,19 +24,18 @@ if($conn->connect_error)
 {
     die("Connection Failed " . $conn->connect_error);
 }
-/*
-        //Check If Tablename is Valid 
+/* Check If Tablename is Valid */
 $showTables = mysqli_query($conn, "SHOW TABLES FROM $database");
-$table = mysqli_fetch_array($showTables);
-$hod = array();
-$hod = $table[0];
-print_r($table[1]);
-
-if(in_array($tableName, $hod) == FALSE)
+$tbs = array();
+while($table = mysqli_fetch_row($showTables))
 {
-    header("location: Error-tbs.php");  
+    $tbs[] = $table[0];
 }
-*/       
+if(in_array($tableName,$tbs) == 0)
+{
+    header("location: ../Errors/Error-tbs.php");
+}      
+
 
         /* Number of Columns */
         
@@ -73,9 +72,11 @@ if($_SESSION["_dbname"] == "")
     </div>
 
     <div class = "information2" style = "height: 125px;">
-    Connected to: <?php print_r($database); ?> <br>
-    Using table: <?php print_r($tableName)?> <br>
-    Column Names: <br><?php
+    <b>Connected to:</b> <?php print_r($database); ?> <br>
+    
+    <b>Using table:</b> <?php print_r($tableName)?> <br>
+    
+    <b>Column Names:</b> <br><?php
     for($i = 0; $i < sizeof($columnNames); $i++)
     {print_r($columnNames[$i] . " <br>");}
     ?> <br>

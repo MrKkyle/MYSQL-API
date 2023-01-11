@@ -14,11 +14,23 @@ $database = $_POST["databaseName"];
 $username = "root";
 $password = "";
 $_SESSION["dbName"] = $database;
-$conn = mysqli_connect($servername, $username, $password, $database);
+$conn = mysqli_connect($servername, $username, $password);
 if($conn->connect_error)
 {
     die("Connection Failed " . $conn->connect_error);
 }
+$db = mysqli_query($conn, "SHOW DATABASES");
+$dbs = array();
+while($set = mysqli_fetch_row($db))
+{
+    $dbs[] = $set[0];
+    
+}
+if(in_array($database,$dbs) == 0)
+{
+    header("location: ../Errors/Error-dbselect.php");
+}
+
 ?>
 
 <body>
