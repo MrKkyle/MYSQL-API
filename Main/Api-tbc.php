@@ -1,18 +1,6 @@
 <?php session_start();?>
+<?php include 'functions.php';?>
 
-<?php 
-$servername = "localhost";
-$database = $_SESSION["_dbname"];
-$username = "root";
-$password = "";
-$tablename = $_POST["newtbName"];
-
-$conn = mysqli_connect($servername, $username, $password, $database);
-if($conn->connect_error)
-{
-    die("Connection Failed " . $conn->connect_error);
-}
-?>
 <head>
 <link rel = "stylesheet" type = "text/css" href = "../CSS/Api-main.css" ></link> 	
 </head>

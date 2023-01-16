@@ -1,4 +1,5 @@
 <?php session_start(); ?>
+<?php include 'functions.php';?>
 
 <?php
 $servername = "localhost";
@@ -25,11 +26,8 @@ $result = "";
 $column0 = "id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,";
 
 /* RECONNECT TO SERVER */
-$conn = mysqli_connect($servername, $username, $password, $databaseName);
-if($conn->connect_error)
-{
-    die("Connection Failed: " . $conn->connect_error);
-}
+createConnection1($servername, $username, $password, $databaseName);
+
     /* Create Table */
 if($column1 != "")
 {
@@ -50,7 +48,6 @@ if($column4 != "")
 
 $result .= $column0 . $c1 . $c2 . $c3 . $c4;
 $result = rtrim($result, ", ");
-
 
 $query = "CREATE TABLE $tableName ($result)";
 

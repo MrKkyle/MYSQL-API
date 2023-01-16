@@ -1,4 +1,5 @@
 <?php session_start();?>
+<?php include 'functions.php';?>
 
 <?php
 
@@ -7,6 +8,8 @@ $database = $_SESSION["_dbname"];
 $username = "root";
 $password = "";
 $tableName;
+$columns = array();
+$columnNames = array();
 
 /* Get the table Name */
 if(isset($_POST["tableName"]) == false)
@@ -19,41 +22,13 @@ else
     $_SESSION["_tableName"] = $_POST["tableName"];
 }
 
-$conn = mysqli_connect($servername, $username, $password, $database);
-if($conn->connect_error)
-{
-    die("Connection Failed " . $conn->connect_error);
-}
+createConnection1($servername, $username, $password, $database);
+
 /* Check If Tablename is Valid */
-$showTables = mysqli_query($conn, "SHOW TABLES FROM $database");
-$tbs = array();
-while($table = mysqli_fetch_row($showTables))
-{
-    $tbs[] = $table[0];
-}
-if(in_array($tableName,$tbs) == 0)
-{
-    header("location: ../Errors/Error-tbs.php");
-}      
+validateTable($database, $tableName, $conn);      
 
-
-        /* Number of Columns */
-        
-$query = "SHOW COLUMNS FROM $tableName";
-$result = $conn->query($query);
-while($row = $result->fetch_assoc())
-{
-    $columns[] = $row['Field'];    
-    $columnNumber = sizeof($columns); 
-}
-
-        /* Column Names */
-$db = mysqli_query($conn, $query);
-while($set = mysqli_fetch_row($db))
-{
-    $columnNames[] = $set[0];
-} 
-
+/* Returns the column Infomation for the selected Table */
+columnInfo($tableName, $conn);
 
 ?>
 

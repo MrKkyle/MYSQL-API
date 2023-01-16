@@ -1,4 +1,5 @@
 <?php session_start();?>
+<?php include 'functions.php';?>
 
 <?php
 $databaseName = $_POST["newDatabase"];
@@ -15,21 +16,8 @@ $_SESSION["c3name"] = $_POST["column3"];
 $_SESSION["c4name"] = $_POST["column4"];
 
 
-        /* Checks to see if any issues exists in the formatting of the database */
-for($i = 1; $i <= 4; $i++)
-{
-    if($_POST["column" . $i] != "")
-    {
-        if(isset($_POST["c" . $i . "type"]) == TRUE)
-        {
-            $_SESSION["c" . $i . "type"] = $_POST["c" . $i . "type"];
-        }
-        else
-        {
-            header("location: ../Errors/Error-format.php");
-        }
-    }
-}
+/* Checks to see if any issues exists in the formatting of the database */
+tableCheck();
 
 if(isset($_POST["c2type"]) == FALSE)
 {
@@ -69,11 +57,7 @@ $password = "";
 $dbname = $databaseName;
 $result = "";
 
-$conn = mysqli_connect($servername, $username, $password);
-if($conn->connect_error)
-{
-    die("Connection Failed: " . $conn->connect_error);
-}
+createConnection2($servername, $username, $password);
 
 $sql2 = "SHOW DATABASES LIKE '$databaseName'";
 $result = mysqli_query($conn, $sql2); 

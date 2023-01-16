@@ -1,4 +1,5 @@
 <?php session_start();?>
+<?php include 'functions.php';?>
 
 <!-- Displays the information in the database -->
 <?php
@@ -12,25 +13,11 @@ $servername = "localhost";
 $username = "root";
 $password = "";
 $dbname = $_SESSION["_dbname"];
-$mysqli = new mysqli($servername, $username, $password, $dbname);
+createConnection1($servername, $username, $password, $dbname);
 
 
-        /* Number of Columns */
-        
-$query = "SHOW COLUMNS FROM $tableName";
-$result = $mysqli->query($query);
-while($row = $result->fetch_assoc())
-{
-    $columns[] = $row['Field'];    
-    $columnNumber = sizeof($columns); 
-}
-
-        /* Column Names */
-$db = mysqli_query($mysqli, $query);
-while($set = mysqli_fetch_row($db))
-{
-    $columnNames[] = $set[0];
-}   
+/* Returns the column Infomation for the selected Table */
+columnInfo($tableName, $conn);   
 ?>
 
 
@@ -52,6 +39,7 @@ while($set = mysqli_fetch_row($db))
     $query = "SELECT * FROM $tableName";
     
     echo '<table border = "0" cellspacing = "2" cellpadding = "2" color = "white">';
+    
     for($i = 0; $i < sizeof($columnNames); $i++)
     {
         echo"
@@ -59,6 +47,7 @@ while($set = mysqli_fetch_row($db))
             <td><font face = 'Arial'>$columnNames[$i]</font> </td>
         ";
     }
+    
     /*Make this flexable */
     if ($result = $mysqli->query($query)) 
     {
@@ -68,7 +57,7 @@ while($set = mysqli_fetch_row($db))
             {
                 ${'field' . $i . 'name'} = $row["$columnNames[$i]"];
             }
-
+            
             echo" <tr>";
             for($i = 0; $i < sizeof($columnNames); $i++)
             {

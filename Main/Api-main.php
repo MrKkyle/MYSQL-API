@@ -1,4 +1,5 @@
 <?php session_start();?>
+<?php include 'functions.php';?>
 <head>
 <link rel = "stylesheet" type = "text/css" href = "../CSS/Api-main.css" ></link>   
 </head>
@@ -52,12 +53,7 @@ if(isset($_SESSION["isActive"]) == false)
         <b>List of Databases Available:</b><br>
         <hr>
         <?php 
-            $conn = mysqli_connect("localhost", "root", "");
-            //Check connection
-            if($conn->connect_error)
-            {
-                die("Connection failed: " . $conn->connect_error);
-            }
+            createConnection2("localhost", "root", "");
             //Shows Databases
             $db = mysqli_query($conn, "SHOW DATABASES");
             $dbs = array();

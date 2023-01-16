@@ -1,4 +1,5 @@
 <?php session_start();?>
+<?php include 'functions.php';?>
 
 <head>
 <link rel = "stylesheet" type = "text/css" href = "../CSS/Api-main.css"></link> 	
@@ -14,11 +15,7 @@ $database = $_POST["databaseName"];
 $username = "root";
 $password = "";
 $_SESSION["dbName"] = $database;
-$conn = mysqli_connect($servername, $username, $password);
-if($conn->connect_error)
-{
-    die("Connection Failed " . $conn->connect_error);
-}
+createConnection2($servername, $username, $password);
 $db = mysqli_query($conn, "SHOW DATABASES");
 $dbs = array();
 while($set = mysqli_fetch_row($db))

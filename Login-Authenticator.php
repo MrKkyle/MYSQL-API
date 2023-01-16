@@ -1,4 +1,5 @@
 <?php session_start();?>
+<?php include 'Main/functions.php';?>
 <head>
 <style>
 
@@ -17,14 +18,7 @@ $username = "root";
 $password = "";
 $dbname = "api-database";
 
-//Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-//Check connection
-if($conn->connect_error)
-{
-    die("Connection failed: " . $conn->connect_error);
-}
+createConnection1($servername, $username, $password, $dbname);
 
 $query = mysqli_query($conn, "SELECT * FROM `api-credentials` WHERE userName = '$namae' AND passCode = '$passCode'");
 
