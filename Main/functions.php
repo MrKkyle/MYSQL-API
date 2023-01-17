@@ -78,14 +78,149 @@ function columnInfo(string $tableName, $conn)
     }
 }
 
-/* Function to create database */
+/* Functions to print out the table */
+function createTable1(string $tableName, $conn)
+{
+    global $c1;
+    global $c2;
+    global $c3;
+    global $c4;
+    global $column0;
+    global $result;
+    if($_SESSION["c1name"] != "")
+    {
+        $c1 .= $_SESSION["c1name"] . " " . $_SESSION["c1type"] . " NOT NULL,";  
+    }
+    if($_SESSION["c2name"] != "")
+    {
+        $c2 .= $_SESSION["c2name"] . " " . $_SESSION["c2type"] . " NOT NULL,";  
+    }
+    if($_SESSION["c3name"] != "")
+    {
+        $c3 .= $_SESSION["c3name"] . " " . $_SESSION["c3type"] . " NOT NULL,"; 
+    }
+    if($_SESSION["c4name"] != "")
+    {
+        $c4 .= $_SESSION["c4name"] . " " . $_SESSION["c4type"] . " NOT NULL,"; 
+    }
+    $result .= $column0 . $c1 . $c2 . $c3 . $c4;
+    $result = rtrim($result, ", ");
+    
+    $query = "CREATE TABLE $tableName ($result)";
+    
+    if(mysqli_query($conn, $query))
+    {
+        echo"
+        <div class = 'omega-container'>
+            <div class = 'bg-img'>
+            <div class = 'modal1'>
+            <div class = 'modal-content'>
+                <img src = '../Images/Simple.gif' alt = 'Avatar' class = 'avatar'>
+                <br><br><br><br><br><br><br><br>
+            <div class = 'text'>Table created</div>  
+            <button class = 'button3' onclick = 'window.location.href = `Api-table.php`;'>Proceed</button>
+        ";   
+    }
+    else
+    {
+        echo"
+        <div class = 'omega-container'>
+            <div class = 'bg-img'>
+            <div class = 'modal1'>
+            <div class = 'modal-content'>
+                <img src = '../Images/Simple.gif' alt = 'Avatar' class = 'avatar'>
+                <br><br><br><br><br><br><br><br>
+            <div class = 'text'>Failed to create Table</div>  
+            <button class = 'button3' onclick = 'window.location.href = `Api-main.php`;'>Proceed</button>
+        ";   
+    }
+}
+function createTable2(string $tableName, $conn)
+{
+    global $column0;
+    global $c1;
+    global $c2;
+    global $c3;
+    global $c4;
+    global $result;
+    if($_POST["column1"] != "")
+    {
+        $c1 .= $_POST["column1"] . " " . $_POST["c1type"] . " NOT NULL,";  
+    }
+    if($_POST["column2"] != "")
+    {
+        $c2 .= $_POST["column2"] . " " . $_POST["c2type"] . " NOT NULL,";  
+    }
+    if($_POST["column3"] != "")
+    {
+        $c3 .= $_POST["column3"] . " " . $_POST["c3type"] . " NOT NULL,"; 
+    }
+    if($_POST["column4"] != "")
+    {
+        $c4 .= $_POST["column4"] . " " . $_POST["c4type"] . " NOT NULL,"; 
+    }
+    $result .= $column0 . $c1 . $c2 . $c3 . $c4;
+    $result = rtrim($result, ", ");
+    
 
-/* Function to create Table */
+    
+    $query = "CREATE TABLE $tableName ($result)";
+    
+    if(mysqli_query($conn, $query))
+    {
+        echo "
+            <div class = 'omega-container'>
+            <div class = 'bg-img'>
+            <div class = 'modal1'>
+            <div class = 'modal-content'>
+            <img src = '../Images/Simple.gif' alt = 'Avatar' class = 'avatar'>
+            <br><br><br><br><br><br><br><br>
+            <div class = 'text'>Query successful!<br></div>  
+            <button class = 'button4' onclick = 'window.location.href = `Api-database.php`;'>Proceed</button>
+        ";
+    } 
+    else
+    {
+        echo "
+        <div class = 'omega-container'>
+        <div class = 'bg-img'>
+        <div class = 'modal1'>
+        <div class = 'modal-content'>
+        <img src = '../Images/Simple.gif' alt = 'Avatar' class = 'avatar'>
+        <br><br><br><br><br><br><br><br>
+        <div class = 'text'>Query unsuccessful!<br></div>  
+        <button class = 'button4' onclick = 'window.location.href = `Api-database.php`;'>Proceed</button>
+        ";
+    }
+}
 
-/* Function to print out the table */
+/* Function to obtain information for queries run */
+
+function workerInfo($conn)
+{
+    /* Get the table Name */
+    global $tableName;
+    if(isset($_POST["tableName"]) == false)
+    {
+        $tableName = $_SESSION["_tableName"];
+    }
+    else
+    {
+        $tablename = $_POST["tableName"];
+        $_SESSION["_tableName"] = $_POST["tableName"];
+    }
+            /* Column Names */
+    $query = "SHOW COLUMNS FROM $tableName";
+    $db = mysqli_query($conn, $query);
+    while($set = mysqli_fetch_row($db))
+    {
+        $columnNames[] = $set[0];
+    }    
+}
 
 
 /* Function to run a mysql query(last) */
+
 
 
 

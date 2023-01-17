@@ -1,4 +1,5 @@
 <?php session_start();?>
+<?php include 'functions.php';?>
 
 <?php
 
@@ -19,23 +20,8 @@ function addInfo()
     {
         die("Connection Failed " . $conn->connect_error);
     }    
-    /* Get the table Name */
-    if(isset($_POST["tableName"]) == false)
-    {
-        $tableName = $_SESSION["_tableName"];
-    }
-    else
-    {
-        $tablename = $_POST["tableName"];
-        $_SESSION["_tableName"] = $_POST["tableName"];
-    }
-            /* Column Names */
-    $query = "SHOW COLUMNS FROM $tableName";
-    $db = mysqli_query($conn, $query);
-    while($set = mysqli_fetch_row($db))
-    {
-        $columnNames[] = $set[0];
-    }
+    /* Get the table + column details */
+    workerInfo($conn);
     
     /* Values of form data stored in variables */
     for($i = 0; $i < (sizeof($_POST) - 1); $i++)
@@ -93,7 +79,7 @@ function updateInfo()
     $database = $_SESSION["_dbname"];
     $username = "root";
     $password = "";
-    $tablename = "";
+    $tableName = "";
     $ID = $_POST["ID"]; /* Identification */
     $changeID = $_POST["changeID"]; /* old value */
     $newID = $_POST["newID"];   /* new value */
@@ -102,27 +88,12 @@ function updateInfo()
     if($conn->connect_error)
     {
         die("Connection Failed " . $conn->connect_error);
-    }    
-    /* Get the table Name */
-    if(isset($_POST["tableName"]) == false)
-    {
-        $tableName = $_SESSION["_tableName"];
-    }
-    else
-    {
-        $tablename = $_POST["tableName"];
-        $_SESSION["_tableName"] = $_POST["tableName"];
-    }
-            /* Column Names */
-    $query = "SHOW COLUMNS FROM $tableName";
-    $db = mysqli_query($conn, $query);
-    while($set = mysqli_fetch_row($db))
-    {
-        $columnNames[] = $set[0];
-    }
+    } 
+
+    /* Get the table + column details */
+    workerInfo($conn);
 
     $query = "UPDATE $tableName SET $changeID = '$newID' WHERE id = $ID";
-    print_r($query);
     
     if(mysqli_query($conn, $query))
     {
@@ -167,20 +138,9 @@ function newTable()
     $c4 = "";
     $result = "";
     $column0 = "id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,";
-    for($i = 1; $i <= 4; $i++)//Checks the format of the table
-    {
-        if($_POST["column" . $i] != "")                 //if the column has a name
-        {
-            if(isset($_POST["c" . $i . "type"]) == TRUE)//if it has a type
-            {
-                continue;
-            }
-            else                                        //it doesnt have a type
-            {
-                header("location: ../Errors/Error-tbf.php");
-            }
-        }
-    }
+    //Checks the format of the table
+    tableCheck();
+
     if(isset($_POST["c2type"]) == FALSE)
     {
         $_SESSION["c2type"] = "";
@@ -205,7 +165,7 @@ function newTable()
     }
     else
     {
-        $c4type = $_POST["c2type"];
+        $c4type = $_POST["c4type"];
     }
 
     $conn = mysqli_connect($servername, $username, $password, $database);
@@ -213,56 +173,7 @@ function newTable()
     {
         die("Connection Failed " . $conn->connect_error);
     } 
-    if($_POST["column1"] != "")
-    {
-        $c1 .= $_POST["column1"] . " " . $_POST["c1type"] . " NOT NULL,";  
-    }
-    if($_POST["column2"] != "")
-    {
-        $c2 .= $_POST["column2"] . " " . $_POST["c2type"] . " NOT NULL,";  
-    }
-    if($_POST["column3"] != "")
-    {
-        $c3 .= $_POST["column3"] . " " . $_POST["c3type"] . " NOT NULL,"; 
-    }
-    if($_POST["column4"] != "")
-    {
-        $c4 .= $_POST["column4"] . " " . $_POST["c4type"] . " NOT NULL,"; 
-    }
-    $result .= $column0 . $c1 . $c2 . $c3 . $c4;
-    $result = rtrim($result, ", ");
-    
-
-    
-    $query = "CREATE TABLE $tablename ($result)";
-    echo"<br>";
-    
-    if(mysqli_query($conn, $query))
-    {
-        echo "
-            <div class = 'omega-container'>
-            <div class = 'bg-img'>
-            <div class = 'modal1'>
-            <div class = 'modal-content'>
-            <img src = '../Images/Simple.gif' alt = 'Avatar' class = 'avatar'>
-            <br><br><br><br><br><br><br><br>
-            <div class = 'text'>Query successful!<br></div>  
-            <button class = 'button4' onclick = 'window.location.href = `Api-database.php`;'>Proceed</button>
-        ";
-    } 
-    else
-    {
-        echo "
-        <div class = 'omega-container'>
-        <div class = 'bg-img'>
-        <div class = 'modal1'>
-        <div class = 'modal-content'>
-        <img src = '../Images/Simple.gif' alt = 'Avatar' class = 'avatar'>
-        <br><br><br><br><br><br><br><br>
-        <div class = 'text'>Query unsuccessful!<br></div>  
-        <button class = 'button4' onclick = 'window.location.href = `Api-database.php`;'>Proceed</button>
-        ";
-    }        
+    createTable2($tablename, $conn);        
 }
 
 function deleteInformation()
