@@ -113,7 +113,7 @@ body
 {
 	opacity: 0.95;
 }
-.addInfo
+.database-div
 {
     display: none;
     position: fixed;
@@ -129,79 +129,7 @@ body
     margin: 2% auto 15% auto;
     padding: 10px;
     left: 50%;
-    transform: translate(-45%, 0%); 
-}
-.deleteInfo
-{
-    display: none;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 33%;
-    height: 650px;
-    width: 600px;
-    padding: 20px;
-    opacity: 0.9;
-    background-color: rgba(0, 0, 0, 0.5);
-    border-radius: 10px;
-    margin: 2% auto 15% auto;
-    padding: 10px;
-    left: 50%;
-    transform: translate(-45%, 0%); 
-}
-.createInfo
-{
-    display: none;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 33%;
-    height: 650px;
-    width: 600px;
-    padding: 20px;
-    opacity: 0.9;
-    background-color: rgba(0, 0, 0, 0.5);
-    border-radius: 10px;
-    margin: 2% auto 15% auto;
-    padding: 10px;
-    left: 50%;
-    transform: translate(-45%, 0%); 
-}
-.updateInfo
-{
-    display: none;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 33%;
-    height: 650px;
-    width: 600px;
-    padding: 20px;
-    opacity: 0.9;
-    background-color: rgba(0, 0, 0, 0.5);
-    border-radius: 10px;
-    margin: 2% auto 15% auto;
-    padding: 10px;
-    left: 50%;
-    transform: translate(-45%, 0%); 
-}
-.deleteTable
-{
-    display: none;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 33%;
-    height: 650px;
-    width: 600px;
-    padding: 20px;
-    opacity: 0.9;
-    background-color: rgba(0, 0, 0, 0.5);
-    border-radius: 10px;
-    margin: 2% auto 15% auto;
-    padding: 10px;
-    left: 50%;
-    transform: translate(-45%, 0%); 
+    transform: translate(-45%, 0%);    
 }
 .m2 
 {
@@ -407,10 +335,10 @@ input[type = submit]
 	color:rgba(255, 255, 255, 0.8);
     background-color: rgba(0, 0, 0, 0.5);
 	border: 1px solid black;
-	top: 130px;
+	top: 100px;
 	left: 645px;
 	width: 500px;
-	height: 550px;
+	height: 650px;
     z-index: 2;
     text-align: left;
     padding: 10px;

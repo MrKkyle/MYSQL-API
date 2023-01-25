@@ -4,6 +4,8 @@ const btn2 = document.getElementById("btn2");
 const btn3 = document.getElementById("btn3");
 const btn4 = document.getElementById("btn4");
 const btn5 = document.getElementById("btn5");
+const btn6 = document.getElementById("btn6");
+const btn7 = document.getElementById("btn7");
 
 
 /* Get the modals */
@@ -12,6 +14,8 @@ const updateInfo = document.getElementById("info2");
 const createInfo = document.getElementById("info3");
 const deleteInfo = document.getElementById("info4");
 const deleteTable = document.getElementById("info5");
+const renameTable = document.getElementById("info6");
+const emptyTable = document.getElementById("info7");
 
 const edit = document.getElementById("edit");
 
@@ -56,12 +60,30 @@ btn5.onclick = function(event)
         deleteTable.style.display = "block";
     }
 }
+btn6.onclick = function(event)
+{
+    if(btn6.onclick)
+    {
+        edit.style.display = "none";
+        renameTable.style.display = "block";
+    }
+}
+btn7.onclick = function(event)
+{
+    if(btn7.onclick)
+    {
+        edit.style.display = "none";
+        emptyTable.style.display = "block";
+    }
+}
  /* Close button */
 const closeButton1 = document.getElementById("span01");
 const closeButton2 = document.getElementById("span02");
 const closeButton3 = document.getElementById("span03");
 const closeButton4 = document.getElementById("span04");
 const closeButton5 = document.getElementById("span05");
+const closeButton6 = document.getElementById("span06");
+const closeButton7 = document.getElementById("span07");
 
 closeButton1.onclick = function(event)
 {
@@ -101,5 +123,21 @@ closeButton5.onclick = function(event)
     {
         edit.style.display = "block";
         deleteTable.style.display = "none";
+    }
+}
+closeButton6.onclick = function(event)
+{
+    if(closeButton6.onclick)
+    {
+        edit.style.display = "block";
+        renameTable.style.display = "none";
+    }
+}
+closeButton7.onclick = function(event)
+{
+    if(closeButton7.onclick)
+    {
+        edit.style.display = "block";
+        emptyTable.style.display = "none";
     }
 }

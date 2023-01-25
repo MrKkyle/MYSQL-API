@@ -70,11 +70,13 @@ if($_SESSION["_dbname"] == "")
         <button class = "button5" type = "button" id = "btn3">Create New Table<i class = "m" style = "background-image: url('../Images/new.png');"></i></button><br> 
         <button class = "button5" type = "button" id = "btn4">Delete Table Information<i class = "m" style = "background-image: url('../Images/remove.png');"></i></button><br>
         <button class = "button5" type = "button" id = "btn5">Delete A Table<i class = "m" style = "background-image: url('../Images/remove2.png');"></i></button><br>
+        <button class = "button5" type = "button" id = "btn6">Rename Table<i class = "m" style = "background-image: url('../Images/remove2.png');"></i></button><br>
+        <button class = "button5" type = "button" id = "btn7">Empty Table Information<i class = "m" style = "background-image: url('../Images/remove2.png');"></i></button><br>
         <button class = "button5" type = "button" id = "btn5" onclick = "window.location.href = 'Api-main.php';">Return to home<i class = "m" style = "background-image:url('../Images/home.png');"></i></button><br>
     </div>
 
     <!-- Add info to database -->
-    <div class = "addInfo" id = "info1">
+    <div class = "database-div" id = "info1">
         <span id = "span01" onclick = "document.getElementById('info1').style.display = 'none'" class = "close" title = "Close Modal" ></span>
         <br>
         <div class = "text-modal">Add Information</div><br><br>
@@ -97,7 +99,7 @@ if($_SESSION["_dbname"] == "")
     </div>
 
     <!-- Update database Info -->
-    <div class = "updateInfo" id = "info2">
+    <div class = "database-div" id = "info2">
         <span id = "span02" onclick = "document.getElementById('info2').style.display = 'none'" class = "close" title = "Close Modal" ></span>
         <br>       
         <div class = "text-modal">Update Information</div><br>
@@ -117,7 +119,7 @@ if($_SESSION["_dbname"] == "")
     </div>
 
     <!-- Create new Table -->
-    <div class = "createInfo" id = "info3">
+    <div class = "database-div" id = "info3">
         <span id = "span03" onclick = "document.getElementById('info3').style.display = 'none'" class = "close" title = "Close Modal" ></span>
         <br>       
         <div class = "text-modal">Create new Table</div><br>
@@ -181,14 +183,13 @@ if($_SESSION["_dbname"] == "")
                                                                                                     <option>int(15)</option>
                                                                                                   </select>
                 <br>
-                
                 <button class = "button4" type = "submit" style = "left: 40%;" name = "tbBtn">Confirm</button>
                 
             </form>
     </div>
 
     <!-- Delete database info-->
-    <div class = "deleteInfo" id = "info4">
+    <div class = "database-div" id = "info4">
         <span id = "span04" onclick = "document.getElementById('info4').style.display = 'none'" class = "close" title = "Close Modal" ></span>
         <br>     
         <div class = "text-modal">Delete Table Information</div>
@@ -203,10 +204,11 @@ if($_SESSION["_dbname"] == "")
     </div>
 
     <!-- Delete Table -->
-    <div class = "deleteTable" id = "info5">
+    <div class = "database-div" id = "info5">
         <span id = "span05" onclick = "document.getElementById('info5').style.display = 'none'" class = "close" title = "Close Modal" ></span>
         <br>       
         <div class = "text-modal">Delete A Table</div><br>
+        <div class = "text-modal">This will remove the table from the database, unable to return, proceed with caution</div><br>
         <form method = "post" action = "worker.php">
             <div class = "text-modal">Enter Table Name</div><br>
             <input type = "text" name = "delTable" placeholder = "Enter table name" autocomplete = "off" required>
@@ -215,6 +217,40 @@ if($_SESSION["_dbname"] == "")
             <button class = "button4" type = "submit" style = "left: 40%;" name = "delTbBtn">Confirm</button>
         </form>
     </div>
+    
+    <!-- Empty Table Information -->
+    <div class = "database-div" id = "info7">
+        <span id = "span07" onclick = "document.getElementById('info7').style.display = 'none'" class = "close" title = "Close Modal"></span>
+        <br>
+        <div class = "text-modal">Empty Table Data</div><br>
+        <div class = "text-modal">This will remove all the information in the Table, please proceed with caution. Lost information cannot be returned again</div><br>
+        <form method = "post" action = "worker.php">
+            <div class = "text-modal">Enter Table Name</div><br>
+            <input type = "text" name = "emptyTable" placeholder = "Enter table name" autocomplete = "off" required>
+            <br><br>
+
+            <button class = "button4" type = "submit" style = "left: 40%;" name = "emptyTb">Confirm</button>
+        </form>
+    </div>
+
+    <!-- Rename Table -->
+    <div class = "database-div" id = "info6">
+        <span id = "span06" onclick = "document.getElementById('info6').style.display = 'none'" class = "close" title = "Close Modal"></span>
+        <br>
+        <div class = "text-modal">Rename Table</div><br>
+        <form method = "post" action = "worker.php">
+            <div class = "text-modal">Enter Old Table Name</div><br>
+            <input type = "text" name = "oldTable" placeholder = "Enter old table name" autocomplete = "off" required>
+            <br><br>
+
+            <div class = "text-modal">Enter New Table Name</div><br>
+            <input type = "text" name = "newTb" placeholder = "Enter new table name" autocomplete = "off" required>
+            <br><br>
+
+            <button class = "button4" type = "submit" style = "left: 40%;" name = "renameTb">Confirm</button>
+        </form>
+    </div>
+
 </body>
 
 <script src = "Api-database.js"></script>

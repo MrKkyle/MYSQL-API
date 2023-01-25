@@ -250,7 +250,6 @@ function deleteTable()
     $database = $_SESSION["_dbname"];
     $username = "root";
     $password = "";
-    $tablename = "";
     
     $conn = mysqli_connect($servername, $username, $password, $database);
     if($conn->connect_error)
@@ -325,6 +324,119 @@ function deleteTable()
     }    
     
 }
+function renameTable()
+{
+    $servername = "localhost";
+    $database = $_SESSION["_dbname"];
+    $username = "root";
+    $password = "";
+    /* Get the table Name */
+    $oldTable = $_POST["oldTable"]; 
+    $newTable = $_POST["newTb"];
+    
+    
+    $conn = mysqli_connect($servername, $username, $password, $database);
+    if($conn->connect_error)
+    {
+        die("Connection Failed " . $conn->connect_error);
+    }    
+
+    /* Get the table Name */
+
+            /* Column Names */
+       
+    $query = "SHOW COLUMNS FROM $oldTable";
+    $db = mysqli_query($conn, $query);
+    if($db == FALSE)
+    {
+        header("location: Error-tbs.php");  
+    }
+
+    $query = "ALTER TABLE $oldTable RENAME TO $newTable";
+    print_r($query);
+    
+    if(mysqli_query($conn, $query))
+    {
+        echo "
+            <div class = 'omega-container'>
+            <div class = 'bg-img'>
+            <div class = 'modal1'>
+            <div class = 'modal-content'>
+            <img src = '../Images/Simple.gif' alt = 'Avatar' class = 'avatar'>
+            <br><br><br><br><br><br><br><br>
+            <div class = 'text'>Query successful!<br></div>  
+            <div class = 'text'>New Login required<br> Reason: New Table name detected<br></div> 
+            <button class = 'button4' onclick = 'window.location.href = `Api-main.php`;'>Proceed</button>
+        ";
+    } 
+    else
+    {
+        echo "
+        <div class = 'omega-container'>
+        <div class = 'bg-img'>
+        <div class = 'modal1'>
+        <div class = 'modal-content'>
+        <img src = '../Images/Simple.gif' alt = 'Avatar' class = 'avatar'>
+        <br><br><br><br><br><br><br><br>
+        <div class = 'text'>Query unsuccessful!<br></div>  
+        <button class = 'button4' onclick = 'window.location.href = `Api-database.php`;'>Proceed</button>
+        ";
+    }
+    
+}
+
+function emptyInformation()
+{
+    $servername = "localhost";
+    $database = $_SESSION["_dbname"];
+    $username = "root";
+    $password = "";
+    /* Get the table Name */
+    $tableName = $_POST["emptyTable"];
+
+    $conn = mysqli_connect($servername, $username, $password, $database);
+    if($conn->connect_error)
+    {
+        die("Connection Failed " . $conn->connect_error);
+    }    
+
+            /* Column Names */
+       
+    $query = "SHOW COLUMNS FROM $tableName";
+    $db = mysqli_query($conn, $query);
+    if($db == FALSE)
+    {
+        header("location: Error-tbs.php");  
+    }
+    $query = "TRUNCATE $tableName";
+
+    if(mysqli_query($conn, $query))
+    {
+        echo "
+            <div class = 'omega-container'>
+            <div class = 'bg-img'>
+            <div class = 'modal1'>
+            <div class = 'modal-content'>
+            <img src = '../Images/Simple.gif' alt = 'Avatar' class = 'avatar'>
+            <br><br><br><br><br><br><br><br>
+            <div class = 'text'>Query successful!<br></div>  
+            <button class = 'button4' onclick = 'window.location.href = `Api-database.php`;'>Proceed</button>
+        ";
+    } 
+    else
+    {
+        echo "
+        <div class = 'omega-container'>
+        <div class = 'bg-img'>
+        <div class = 'modal1'>
+        <div class = 'modal-content'>
+        <img src = '../Images/Simple.gif' alt = 'Avatar' class = 'avatar'>
+        <br><br><br><br><br><br><br><br>
+        <div class = 'text'>Query unsuccessful!<br></div>  
+        <button class = 'button4' onclick = 'window.location.href = `Api-database.php`;'>Proceed</button>
+        ";
+    }
+}
 ?>
 
 <head>
@@ -358,6 +470,14 @@ function deleteTable()
     else if(isset($_POST['delTbBtn']))
     {
         deleteTable();
+    }
+    else if(isset($_POST['emptyTb']))
+    {
+        emptyInformation();
+    }
+    else if(isset($_POST['renameTb']))
+    {
+        renameTable();
     }
     else
     {
