@@ -11,7 +11,6 @@ function addInfo()
     $database = $_SESSION["_dbname"];
     $username = "root";
     $password = "";
-    $tablename = "";
     $column = "";
     $values = "";
     
@@ -20,8 +19,23 @@ function addInfo()
     {
         die("Connection Failed " . $conn->connect_error);
     }    
-    /* Get the table + column details */
-    workerInfo($conn);
+    
+    if(isset($_POST["tableName"]) == false)
+    {
+        $tableName = $_SESSION["_tableName"];
+    }
+    else
+    {
+        $tableName = $_POST["tableName"];
+        $_SESSION["_tableName"] = $_POST["tableName"];
+    }
+            /* Column Names */
+    $query = "SHOW COLUMNS FROM $tableName";
+    $db = mysqli_query($conn, $query);
+    while($set = mysqli_fetch_row($db))
+    {
+        $columnNames[] = $set[0];
+    }
     
     /* Values of form data stored in variables */
     for($i = 0; $i < (sizeof($_POST) - 1); $i++)
@@ -43,6 +57,7 @@ function addInfo()
     ($column) VALUES
     ($values)"; 
 
+    print_r($query);
     
     if(mysqli_query($conn, $query))
     {
@@ -71,6 +86,7 @@ function addInfo()
         ";
     }
     
+    
 }
 
 function updateInfo()
@@ -89,12 +105,27 @@ function updateInfo()
     {
         die("Connection Failed " . $conn->connect_error);
     } 
+        /* Table Name */
+    if(isset($_POST["tableName"]) == false)
+    {
+        $tableName = $_SESSION["_tableName"];
+    }
+    else
+    {
+        $tableName = $_POST["tableName"];
+        $_SESSION["_tableName"] = $_POST["tableName"];
+    }
+            /* Column Names */
+    $query = "SHOW COLUMNS FROM $tableName";
+    $db = mysqli_query($conn, $query);
+    while($set = mysqli_fetch_row($db))
+    {
+        $columnNames[] = $set[0];
+    }
 
-    /* Get the table + column details */
-    workerInfo($conn);
 
     $query = "UPDATE $tableName SET $changeID = '$newID' WHERE id = $ID";
-    
+    print_r($query);
     if(mysqli_query($conn, $query))
     {
         echo "

@@ -62,12 +62,6 @@ if(isset($_SESSION["isActive"]) == false)
                 $dbs[] = $set[0];
                 
             }    
-            /* Removes the default values from the array */
-            unset($dbs[0]);
-            unset($dbs[4]);
-            unset($dbs[7]);
-            unset($dbs[8]);
-            unset($dbs[9]);
             echo implode('<br/>', $dbs);
             
             

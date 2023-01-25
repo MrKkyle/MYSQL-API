@@ -206,7 +206,7 @@ function workerInfo($conn)
     }
     else
     {
-        $tablename = $_POST["tableName"];
+        $tableName = $_POST["tableName"];
         $_SESSION["_tableName"] = $_POST["tableName"];
     }
             /* Column Names */
@@ -215,7 +215,7 @@ function workerInfo($conn)
     while($set = mysqli_fetch_row($db))
     {
         $columnNames[] = $set[0];
-    }    
+    } 
 }
 
 
