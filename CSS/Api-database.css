@@ -336,7 +336,6 @@ input[type = submit]
     background-color: rgba(0, 0, 0, 0.5);
 	border: 1px solid black;
 	top: 100px;
-	left: 645px;
 	width: 500px;
 	height: 650px;
     z-index: 2;
@@ -347,6 +346,7 @@ input[type = submit]
     opacity: 1; 
     left: 50%;
     transform: translate(-45%, 0%);   
+    overflow: auto;
 }
 .close
 {

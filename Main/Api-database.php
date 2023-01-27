@@ -66,12 +66,14 @@ if($_SESSION["_dbname"] == "")
         <br>
         <button class = "button5" type = "button" onclick = "window.location.href = 'Api-table.php';">View Table Information<i class = "m" style = "background-image: url('../Images/view.png');"></i></button><br>
         <button class = "button5" type = "button" id = "btn1">Add Table Information<i class = "m" style = "background-image: url('../Images/new.png');"></i></button><br>
-        <button class = "button5" type = "button" id = "btn2">Update Table Information<i class = "m" style = "background-image: url('../Images/update.png');"></i></button><br>
+        <button class = "button5" type = "button" id = "btn2">Update Table Information<i class = "m" style = "background-image: url('../Images/update.png'); left: 220px;"></i></button><br>
         <button class = "button5" type = "button" id = "btn3">Create New Table<i class = "m" style = "background-image: url('../Images/new.png');"></i></button><br> 
         <button class = "button5" type = "button" id = "btn4">Delete Table Information<i class = "m" style = "background-image: url('../Images/remove.png');"></i></button><br>
         <button class = "button5" type = "button" id = "btn5">Delete A Table<i class = "m" style = "background-image: url('../Images/remove2.png');"></i></button><br>
-        <button class = "button5" type = "button" id = "btn6">Rename Table<i class = "m" style = "background-image: url('../Images/remove2.png');"></i></button><br>
-        <button class = "button5" type = "button" id = "btn7">Empty Table Information<i class = "m" style = "background-image: url('../Images/remove2.png');"></i></button><br>
+        <button class = "button5" type = "button" id = "btn6">Rename Table<i class = "m" style = "background-image: url('../Images/rename-32.png');"></i></button><br>
+        <button class = "button5" type = "button" id = "btn7">Empty Table Information<i class = "m" style = "background-image: url('../Images/empty-box-32.png'); left: 220px;"></i></button><br>
+        <button class = "button5" type = "button" id = "btn8">Connect to new Table<i class = "m" style = "background-image: url('../Images/connect-32.png');"></i></button><br>
+        <button class = "button5" type = "button" id = "btn9">Upload Table Inforamtion<i class = "m" style = "background-image: url('../Images/upload-32.png'); left: 227px;"></i></button><br>
         <button class = "button5" type = "button" id = "btn5" onclick = "window.location.href = 'Api-main.php';">Return to home<i class = "m" style = "background-image:url('../Images/home.png');"></i></button><br>
     </div>
 
@@ -250,6 +252,32 @@ if($_SESSION["_dbname"] == "")
             <button class = "button4" type = "submit" style = "left: 40%;" name = "renameTb">Confirm</button>
         </form>
     </div>
+
+    <!-- Connect to a Table -->
+    <div class = "database-div" id = "info8">
+        <span id = "span08" onclick = "document.getElementById('info8').style.display = 'none'" class = "close" title = "Close Modal"></span>
+        <br>
+        <div class = "text-modal">Connect to a Table</div><br>
+        <form method = "post" action = "worker.php">
+            <div class = "text-modal">Enter Table Name</div><br>
+            <input type = "text" name = "connectTable" placeholder = "Table name" autocomplete = "off" required>
+            <br><br>
+
+            <button class = "button4" type = "submit" style = "left: 40%;" name = "renameTb">Confirm</button>
+        </form>
+    </div>
+
+    <!-- Upload Table Information -->
+    <div class = "database-div" id = "info9">
+        <span id = "span09" onclick = "document.getElementById('info9').style.display = 'none'" class = "close" title = "Close Modal"></span>
+        <br>
+        <div class = "text-modal">Upload Table Information</div><br>
+        <form method = "post" action = "worker.php">
+            <div class = "text-modal">This Feature will be made available in the near future...</div><br>
+            
+        </form>
+    </div>
+
 
 </body>
 
