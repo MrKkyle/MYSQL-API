@@ -17,8 +17,8 @@ body
 {
     background-image: url("Images\\915134.png");
     min-height: 480px;
-    height: 977px;
-    width: 1880px;
+    height: 100%;
+    width: 100%;
     min-width: 640px;
 
     background-position: center;
