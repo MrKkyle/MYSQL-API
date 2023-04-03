@@ -1,6 +1,4 @@
 # MYSQL API
-MYSQL API - using xampp
------------------------
 The project featured is a very basic mysql api that uses xampp. This api performs very basic activites such as the CRUD operations:
 Create, Read, Update and Delete.
 
