@@ -7,7 +7,7 @@ echo "
         <div class = 'container'>
             <div class = 'modal1'>
                 <form class = 'modal-content' action = 'Login-Authenticator.php' method = 'post'>
-                <img src = 'Images\\Simple.gif' alt = 'Avatar' class = 'avatar'>
+                <img src = 'Images\Simple.gif' alt = 'Avatar' class = 'avatar'>
                 <br>
                 <br>
                 <div class = 'text'><b>Username</b></div>
