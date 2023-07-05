@@ -56,8 +56,6 @@ function addInfo()
     $query = "INSERT INTO $tableName
     ($column) VALUES
     ($values)"; 
-
-    print_r($query);
     
     if(mysqli_query($conn, $query))
     {

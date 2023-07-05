@@ -164,8 +164,6 @@ img.avatar
 	width: 90px;
 	height: 40px;
 	position: relative;
-    background-position: left;
-    background-size: cover;
 	margin: 10px;
 	color: black;
     background-color: white;
@@ -173,15 +171,12 @@ img.avatar
     border-radius: 10px;
     transition-duration: 1s;
     animation: fadeIn 1s ease-in forwards; 
-
 }
 .button4:hover
 {
 	color: white;
     border: 1px solid white;
-    background-position: center;
     background-color: black;
-    color: white;
 }
 .button5
 {
