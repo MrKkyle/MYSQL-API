@@ -2,7 +2,6 @@
 <?php include 'functions.php';?>
 
 <?php
-
                                             /* Php functions */
                                             /* Add info */
 function addInfo()
@@ -237,12 +236,6 @@ function deleteInformation()
         $columnNames[] = $set[0];
     }
 
-    $query = "SHOW COLUMNS FROM $tableName";
-    $db = mysqli_query($conn, $query);
-    while($set = mysqli_fetch_row($db))
-    {
-        $columnNames[] = $set[0];
-    }
     
     $query = "DELETE FROM $tableName WHERE id = $delID";
     if(mysqli_query($conn, $query))

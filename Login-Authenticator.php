@@ -1,11 +1,8 @@
-<?php session_start();?>
-<?php include 'Main/functions.php';?>
-<head>
-<style>
-
-</style>
-
 <?php
+
+session_start();
+include 'Main/functions.php';
+
 $namae = $_POST["userName"];
 $passCode = $_POST["passCode"];
 
@@ -33,6 +30,3 @@ else
     header("location: Errors/Error-page.php");
 }
 ?>
-</head>
-<body> 
-</body>
