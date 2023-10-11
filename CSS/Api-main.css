@@ -27,7 +27,8 @@ body
     height: 100%;
     top: 0;
     left: 0;
-    background: black;
+    /*filter: blur(5px);*/
+    background: rgb(0, 0, 0, 0.95);
     z-index: 200;
     color: white;
     text-align: center;
@@ -41,19 +42,24 @@ body
     height: 100%;
     top: 0;
     left: 0;
-    background: black;
+    background: rgb(255, 255, 255, 0.1);
     opacity: 0;
     color: white;
     z-index: -10;
     font-size: 18px;
     transition: 1s;
+    /*filter: blur(5px);*/
 }
 @keyframes fadeIn
 {
-    to
+    from
     {
-        opacity: 1;
+        opacity: 0;
     }
+	to
+	{
+		opacity: 1;
+	}
 }
 .fadeIn
 {
@@ -87,14 +93,11 @@ body
 .background-image 
 {
     background-image: url("../Images/915136.png");
-
     height: 100%;
     width: 100%;
-
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    
     position: relative;
     margin: 0;
 }
@@ -110,7 +113,6 @@ body
 	overflow: auto;
 	background-color: rgb(0,0,0);
 	background-color: rgba(0,0,0,0.4);
-	padding-top: 60px;
 }
 .modal-content
 {  
@@ -167,9 +169,9 @@ img.avatar
 .information
 {
     padding: 10px;
-    display: block;
+    display: none;
     font-size: 13px;
-    height: 100px;
+    height: auto;
     width: 250px;
     background-color: rgba(0, 0, 0, 0.8);
     color: white;
@@ -178,12 +180,12 @@ img.avatar
     bottom: 190px;
     border-radius: 10px;
     z-index: 10;
-
+    animation: fadeIn 1s ease-in forwards; 
 }
 .information2
 {
     padding: 10px;
-    display: block;
+    display: none;
     font-size: 13px;
     height: 52px;
     width: 250px;
@@ -193,18 +195,13 @@ img.avatar
     left: 10px;
     top: 82px;
     border-radius: 10px;
-    z-index: 10;
-    /*
-    border-style: inset;
-    border-width: 1px;
-    */
-    
+    z-index: 10;   
+    animation: fadeIn 1s ease-in forwards; 
 }
 .information-databases
 {
     padding: 10px;
-    display: block;
-    
+    display: none;
     font-size: 13px;
     height: 150px;
     width: 250px;
@@ -217,6 +214,7 @@ img.avatar
     overflow: auto;
     z-index: 10;
     text-align: center;
+    animation: fadeIn 1s ease-in forwards;
 }
 .button3 
 {
@@ -278,8 +276,9 @@ img.avatar
 	width: 90px;
 	height: 40px;
 	position: absolute;
-    left: 850px;
-    top: 70px;
+    top: 12%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 	margin: 10px;
 	color: black;
     background-color: white;
@@ -359,51 +358,18 @@ input[type = submit]
     text-align: center;
     font-family: Arial;
 }
-.info-hider
-{
-    cursor: pointer;
-    display: block;
-	position: fixed;
-	bottom: 320px;
-    left: 10px;
-    height: 30px;
-    width: 30px;
-	color: rgb(5, 5, 5);
-    background-image: url("../Images/icons8-info-50.png");
-    background-position: center;
-    background-size: cover;
-    z-index: 2;
-}
-
-.info-show
-{
-    cursor: pointer;
-    display: block;
-	position: fixed;
-	bottom: 350px;
-    left: 10px;
-    height: 30px;
-    width: 30px;
-	color: rgb(5, 5, 5);
-    background-image: url("../Images/icons8-info-50 (1).png");
-    background-position: center;
-    background-size: cover;
-    z-index: 2;   
-}
-
 .createdb
 {
-	display: block;
-	position: absolute;
-	color:rgba(255, 255, 255, 0.8);
+    display: none;
+    position: absolute;
+    color: rgba(255, 255, 255, 0.8);
     background-color: rgba(0, 0, 0, 0.5);
-	border: 1px solid black;
-	top: 130px;
-	left: 300px;
-	width: 500px;
-	height: 165px;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
     z-index: 2;
-    text-align: left;
+    text-align: center;
     padding: 10px;
     border-radius: 10px;
     transition-duration: 1s;
@@ -412,17 +378,17 @@ input[type = submit]
 
 .connectdb
 {
-	display: block;
+	display: none;
 	position: absolute;
 	color:rgba(255, 255, 255, 0.8);
     background-color: rgba(0, 0, 0, 0.5);
-	border: 1px solid black;
-	top: 200px;
-	left: 1000px;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 	width: 500px;
-	height: 165px;
+	height: auto;
     z-index: 2;
-    text-align: left;
+    text-align: center;
     padding: 10px;
     border-radius: 10px;
     transition-duration: 1s;
@@ -431,40 +397,24 @@ input[type = submit]
 
 .tables
 {
-    display: block;
+    display: none;
 	position: absolute;
 	color:rgba(255, 255, 255, 0.8);
     background-color: rgba(0, 0, 0, 0.5);
-	border: 1px solid black;
-	top: 190px;
+	top: 235px;
 	left: -1px;
 	width: 500px;
-	height: 435px;
+	height: auto;
     z-index: 2;
-    text-align: left;
+    text-align: center;
     padding: 10px;
     border-radius: 10px;
     transition-duration: 1s;
     opacity: 0;
 }
-
-
-@keyframes fadeIn
-{
-    from
-    {
-        opacity: 0;
-    }
-	to
-	{
-		opacity: 1;
-	}
-}
-
-
 .main
 {
-    display: block;
+    display: none;
     position: absolute;
     background-color:rgb(120 124 107 / 80%);
     background-position: center;
@@ -481,7 +431,8 @@ input[type = submit]
     padding: 10px;
     font-size: 14px;
     font-family: Arial;
-    
+    animation: fadeIn 1s ease-in forwards;
+    opacity: 0;
 }
 .main:hover
 {
@@ -504,7 +455,6 @@ input[type = submit]
     left: 50%;
     transform: translate(13%, 0%); 
 }
-
 .about
 {
 
@@ -513,45 +463,42 @@ input[type = submit]
     left: 50%;
     transform: translate(13%, 0%); 
 }
-
 .logout
 {
-
     top: 430px;
     background-image: url("../Images/");
     width: 322px;
     height: 221px;
     left: 50%;
     transform: translate(-90%, 0%); 
-
 }
 .tooltip 
 {
-  position: absolute;
-  display: inline-block;
-  border-bottom: 1px dotted rgb(197, 197, 197);
-  left: 200px;
-  top: 100px;
+    position: absolute;
+    display: inline-block;
+    border-bottom: 1px dotted rgb(197, 197, 197);
+    left: 200px;
+    top: 100px;
 }
 
 .tooltip .tooltiptext 
 {
-  visibility: hidden;
-  width: 300px;
-  height: 250px;
-  background-color: rgba(0, 0, 0, 0.5);
-  color: rgba(255, 255, 255, 0.8);
-  text-align: left;
-  border-radius: 6px;
-  padding: 5px;
-  position: absolute;
-  z-index: 1;
-  bottom: 51px;
-  left: 260%;
-  margin-left: -60px;
-  opacity: 0;
-  transition: opacity 0.3s;
-  
+    visibility: hidden;
+    width: 300px;
+    height: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: rgba(255, 255, 255, 0.8);
+    text-align: left;
+    border-radius: 6px;
+    padding: 10px;
+    position: absolute;
+    z-index: 1;
+    bottom: 51px;
+    left: 260%;
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity 0.3s;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .tooltip .tooltiptext::after 

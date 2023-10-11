@@ -1,15 +1,14 @@
 <?php session_start();?>
 <head>
 <link rel = "stylesheet" type = "text/css" href = "Api-login.css" ></link>     
-<?php
-echo "
+
+</head>
+<body>
+
     <div class = 'background-image'>
         <div class = 'container'>
             <div class = 'modal1'>
                 <form class = 'modal-content' action = 'Login-Authenticator.php' method = 'post'>
-                <img src = 'Images\Simple.gif' alt = 'Avatar' class = 'avatar'>
-                <br>
-                <br>
                 <div class = 'text'><b>Username</b></div>
                 <input type = 'text' placeholder = 'Enter Username' name = 'userName' autocomplete = 'off' required>
                 <div class = 'text'><b>Password</b></div>
@@ -29,11 +28,6 @@ echo "
             Latest Login: N/A
         </div>
     </div>
-    ";
-?>
-
-</head>
-<body>
      
 </body>
 

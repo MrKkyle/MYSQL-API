@@ -38,10 +38,9 @@ if(isset($_SESSION["isActive"]) == false)
         }    
 ?>
 <body>
-    <div class = "fadeIn"></div>
-        <div class = "splash-screen">
-            Welcome <?php print_r($_SESSION["userName"]);?>
-        </div>
+    <div class = "splash-screen">
+        Welcome <?php print_r($_SESSION["userName"]);?>
+    </div>
     <div class = "background-image">
         <div class = "modal1"></div>
     </div>
@@ -62,19 +61,14 @@ if(isset($_SESSION["isActive"]) == false)
                 $dbs[] = $set[0];
                 
             }    
-            echo implode('<br/>', $dbs);
-            
-            
-
-             
+            echo implode('<br/>', $dbs);   
         ?>
     </div>
 
     <!---
         LOGIN DETAILS OF USER
     --->
-    <div class = "info-show" id = "id-show"></div>
-    <div class = "info-hider" id = "id-hid"></div>
+
     <div class = "information" id = "info1">
         UserName:  <b><?php print_r($_SESSION["userName"]);?></b>
         <br>
@@ -181,21 +175,19 @@ if(isset($_SESSION["isActive"]) == false)
             <input type = "text" placeholder = "Database name" name = "databaseName" autocomplete = "off" required>
             <br>
             <button class = "button4" id = "btn7" type = "submit">Confirm</button>
-
         </form>
     </div>
 
-
-    
-    <!-- Logout -->
-    <form method = "post">
-        <input type = "submit" name = "button3" class = "main logout" id = "m4" value = "Logout">Logout</input>
-    </form>
-
-    <!-- Main Api-containers --> 
-    <div class = "main create-database" id = "m1"><br><br><br><br><br>Create a Database</div>
-    <div class = "main login-database" id = "m2"><br><br><br><br><br>Connect to Database</div>
-    <div class = "main about" id = "m3"><br><br><br><br><br>About this API</div>
+    <div id = "main">
+        <!-- Main Api-containers --> 
+        <div class = "main create-database" id = "m1"><br><br><br><br><br>Create a Database</div>
+        <div class = "main login-database" id = "m2"><br><br><br><br><br>Connect to Database</div>
+        <div class = "main about" id = "m3"><br><br><br><br><br>About this API</div>
+        <!-- Logout -->
+        <form method = "post">
+            <input type = "submit" name = "button3" class = "main logout" id = "m4" value = "Logout">Logout</input>
+        </form>
+    </div>
 
     <!-- Return Button -->
     <button class = "return-button" id = "rtnbtn01">Return</button>
