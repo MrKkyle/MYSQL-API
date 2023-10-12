@@ -34,7 +34,7 @@ if(in_array($database,$dbs) == 0)
 
     <div class = "background-image">
         <div class = "modal1">
-            <div class = "modal-content" style = "position:fixed; left:38%; margin: 0% auto 3% auto;">
+            <div class = "modal-content">
                 <img src = '../Images/Simple.gif' alt = 'Avatar' class = 'avatar'>
                 <br>
                 <br>
@@ -50,13 +50,15 @@ if(in_array($database,$dbs) == 0)
         </div>    
 
         <!-- Displays the database connected to -->
-        <div class = "information" style = "top: 20px; height: 35px;">
+        <div class = "information" style = "top: 20px; height: 15px; display: block;">
             Connected to: <?php print_r($database);?>
         </div>
 
         <!-- Displays the tables inside the database -->
-        <div class = "information2" style = "overflow: auto;">Tables Available:<br>
+        <div class = "information2" style = "display: block">Tables Available:<br>
             <?php
+                print_r($showTables);
+
                 $showTables = mysqli_query($conn, "SHOW TABLES FROM $database");
                 if($showTables == FALSE)
                 {

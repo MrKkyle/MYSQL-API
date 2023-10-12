@@ -187,13 +187,13 @@ img.avatar
     padding: 10px;
     display: none;
     font-size: 13px;
-    height: 52px;
+    height: auto;
     width: 250px;
     background-color: rgba(0, 0, 0, 0.8);
     color: white;
     position: fixed;
     left: 10px;
-    top: 82px;
+    top: 60px;
     border-radius: 10px;
     z-index: 10;   
     animation: fadeIn 1s ease-in forwards; 
