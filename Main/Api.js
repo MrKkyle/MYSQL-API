@@ -70,7 +70,6 @@ m1.onclick = function(event)
 }
 m2.onclick = function(event)
 {
-    console.log("m2");
     main_.style.display = "none";
     returnButton.style.display = "block";
     connect.style.animation =  "fadeIn 1s ease-in forwards"; 

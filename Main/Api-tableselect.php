@@ -57,8 +57,6 @@ if(in_array($database,$dbs) == 0)
         <!-- Displays the tables inside the database -->
         <div class = "information2" style = "display: block">Tables Available:<br>
             <?php
-                print_r($showTables);
-
                 $showTables = mysqli_query($conn, "SHOW TABLES FROM $database");
                 if($showTables == FALSE)
                 {
